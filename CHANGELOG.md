@@ -1,3 +1,7 @@
+## 0.1.3
+
+* Fix README screenshot rendering on pub.dev.
+
 ## 0.1.2
 
 * Update README.
