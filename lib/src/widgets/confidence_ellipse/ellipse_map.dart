@@ -4,13 +4,10 @@ library;
 
 import 'dart:math' as math;
 
-import 'package:flutter/foundation.dart' as foundation;
 import 'package:flutter/material.dart';
 
 import '../../design/design.dart';
 import '../../engine/model.dart';
-import 'package:device_finder/src/engine/notify.dart' as engine;
-import '../listenable_adapter.dart';
 
 class EllipseMap extends StatelessWidget {
   const EllipseMap({super.key, this.fix, this.estimate, this.anchors, this.repaint});
@@ -30,8 +27,7 @@ class EllipseMap extends StatelessWidget {
 }
 
 class _EllipsePainter extends CustomPainter {
-  _EllipsePainter(this.fix, this.estimate, this.anchors, this.repaint)
-      : super(repaint: repaint is engine.Listenable ? (repaint as engine.Listenable).toFlutter : (repaint as foundation.Listenable?));
+  _EllipsePainter(this.fix, this.estimate, this.anchors, this.repaint) : super(repaint: repaint);
 
   final PositionFix? fix;
   final DistanceEstimate? estimate;
