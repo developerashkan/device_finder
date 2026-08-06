@@ -1,5 +1,7 @@
 # device_finder
 
+![App Screenshot](assets/Screenshot%202026-08-06%20164529.png)
+
 Fully offline Bluetooth device tracking for Flutter. A pure-Dart, Kalman-filtered
 RSSI engine, trilateration with mirror-ambiguity resolution, offline calibration
 profiles, and a premium 60fps radar UI.
