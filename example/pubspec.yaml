@@ -1,0 +1,27 @@
+name: device_finder_example
+description: >-
+  Interactive simulator demo for device_finder — no Bluetooth needed. Feeds
+  synthetic RSSI from a virtual walking device into the real tracking engine
+  and renders the radar, confidence ellipse, and signal meter.
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.6.0
+  flutter: ">=3.27.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  device_finder:
+    path: ../
+  device_finder_ble:
+    path: ../../device_finder_ble/
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
