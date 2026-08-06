@@ -1,0 +1,5 @@
+include: package:flutter_lints/flutter.yaml
+analyzer:
+  errors:
+    # The example app intentionally uses the current file for profile storage.
+    avoid_print: ignore

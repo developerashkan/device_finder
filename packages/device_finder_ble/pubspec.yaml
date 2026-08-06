@@ -1,0 +1,24 @@
+name: device_finder_ble
+description: >-
+  Optional BLE capture driver for device_finder. Bridges flutter_blue_plus
+  advertisement and connected-link RSSI streams into device_finder's pure-Dart
+  engine, with platform permission handling.
+version: 0.1.0
+homepage: https://github.com/developerashkan/device_finder
+repository: https://github.com/developerashkan/device_finder
+environment:
+  sdk: ^3.6.0
+  flutter: ">=3.27.0"
+dependencies:
+  flutter:
+    sdk: flutter
+  device_finder:
+    path: ../device_finder
+  flutter_blue_plus: ^2.3.11
+dev_dependencies:
+  flutter_lints: ^5.0.0
+flutter:
+  uses-material-design: true
+platforms:
+  android:
+  ios:

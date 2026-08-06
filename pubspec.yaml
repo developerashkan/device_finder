@@ -1,0 +1,10 @@
+# `device_finder` monorepo — publishable packages live under packages/.
+name: device_finder_workspace
+publish_to: none
+environment:
+  sdk: ^3.6.0
+workspace:
+  - packages/device_finder
+  - packages/device_finder_ble
+dev_dependencies:
+  melos: ^6.0.0

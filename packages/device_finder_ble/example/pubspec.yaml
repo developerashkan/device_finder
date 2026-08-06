@@ -1,0 +1,19 @@
+name: device_finder_example
+description: End-to-end finder app using device_finder + device_finder_ble.
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.6.0
+  flutter: ">=3.27.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  device_finder:
+    path: ../../device_finder
+  device_finder_ble:
+    path: ../
+
+flutter:
+  uses-material-design: true

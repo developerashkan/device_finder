@@ -1,0 +1,202 @@
+{
+  "roots": [
+    "device_finder_ble"
+  ],
+  "packages": [
+    {
+      "name": "device_finder_ble",
+      "version": "0.1.0",
+      "dependencies": [
+        "device_finder",
+        "flutter",
+        "flutter_blue_plus"
+      ],
+      "devDependencies": [
+        "flutter_lints"
+      ]
+    },
+    {
+      "name": "flutter_lints",
+      "version": "5.0.0",
+      "dependencies": [
+        "lints"
+      ]
+    },
+    {
+      "name": "flutter_blue_plus",
+      "version": "2.3.11",
+      "dependencies": [
+        "flutter",
+        "flutter_blue_plus_android",
+        "flutter_blue_plus_darwin",
+        "flutter_blue_plus_linux",
+        "flutter_blue_plus_platform_interface",
+        "flutter_blue_plus_web",
+        "flutter_blue_plus_winrt"
+      ]
+    },
+    {
+      "name": "device_finder",
+      "version": "0.1.0",
+      "dependencies": [
+        "flutter"
+      ]
+    },
+    {
+      "name": "flutter",
+      "version": "0.0.0",
+      "dependencies": [
+        "characters",
+        "collection",
+        "material_color_utilities",
+        "meta",
+        "sky_engine",
+        "vector_math"
+      ]
+    },
+    {
+      "name": "lints",
+      "version": "5.1.1",
+      "dependencies": []
+    },
+    {
+      "name": "flutter_blue_plus_winrt",
+      "version": "0.0.20",
+      "dependencies": [
+        "flutter",
+        "flutter_blue_plus_platform_interface"
+      ]
+    },
+    {
+      "name": "flutter_blue_plus_web",
+      "version": "9.0.3",
+      "dependencies": [
+        "flutter",
+        "flutter_blue_plus_platform_interface",
+        "flutter_web_plugins",
+        "web"
+      ]
+    },
+    {
+      "name": "flutter_blue_plus_linux",
+      "version": "9.0.3",
+      "dependencies": [
+        "bluez",
+        "flutter",
+        "flutter_blue_plus_platform_interface"
+      ]
+    },
+    {
+      "name": "flutter_blue_plus_darwin",
+      "version": "9.0.3",
+      "dependencies": [
+        "flutter",
+        "flutter_blue_plus_platform_interface"
+      ]
+    },
+    {
+      "name": "flutter_blue_plus_android",
+      "version": "9.0.3",
+      "dependencies": [
+        "flutter",
+        "flutter_blue_plus_platform_interface"
+      ]
+    },
+    {
+      "name": "flutter_blue_plus_platform_interface",
+      "version": "9.0.3",
+      "dependencies": [
+        "flutter"
+      ]
+    },
+    {
+      "name": "sky_engine",
+      "version": "0.0.0",
+      "dependencies": []
+    },
+    {
+      "name": "vector_math",
+      "version": "2.2.0",
+      "dependencies": []
+    },
+    {
+      "name": "meta",
+      "version": "1.18.0",
+      "dependencies": []
+    },
+    {
+      "name": "material_color_utilities",
+      "version": "0.13.0",
+      "dependencies": [
+        "collection"
+      ]
+    },
+    {
+      "name": "collection",
+      "version": "1.19.1",
+      "dependencies": []
+    },
+    {
+      "name": "characters",
+      "version": "1.4.1",
+      "dependencies": []
+    },
+    {
+      "name": "web",
+      "version": "1.1.1",
+      "dependencies": []
+    },
+    {
+      "name": "flutter_web_plugins",
+      "version": "0.0.0",
+      "dependencies": [
+        "flutter"
+      ]
+    },
+    {
+      "name": "bluez",
+      "version": "0.8.3",
+      "dependencies": [
+        "dbus"
+      ]
+    },
+    {
+      "name": "dbus",
+      "version": "0.7.14",
+      "dependencies": [
+        "args",
+        "ffi",
+        "meta",
+        "xml"
+      ]
+    },
+    {
+      "name": "xml",
+      "version": "6.6.1",
+      "dependencies": [
+        "collection",
+        "meta",
+        "petitparser"
+      ]
+    },
+    {
+      "name": "ffi",
+      "version": "2.2.0",
+      "dependencies": []
+    },
+    {
+      "name": "args",
+      "version": "2.7.0",
+      "dependencies": []
+    },
+    {
+      "name": "petitparser",
+      "version": "7.0.2",
+      "dependencies": [
+        "collection",
+        "meta"
+      ]
+    }
+  ],
+  "configVersion": 1
+}

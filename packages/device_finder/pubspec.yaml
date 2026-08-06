@@ -1,0 +1,36 @@
+name: device_finder
+description: >-
+  Fully offline Bluetooth device tracking for Flutter. Pure-Dart Kalman-filtered
+  RSSI engine, trilateration with mirror-ambiguity resolution, offline calibration
+  profiles, and a premium 60fps radar UI. Pair with device_finder_ble for capture.
+version: 0.1.0
+homepage: https://github.com/developerashkan/device_finder
+repository: https://github.com/developerashkan/device_finder
+issue_tracker: https://github.com/developerashkan/device_finder/issues
+documentation: https://github.com/developerashkan/device_finder/tree/main/packages/device_finder#readme
+environment:
+  sdk: ^3.6.0
+  flutter: ">=3.27.0"
+dependencies:
+  flutter:
+    sdk: flutter
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  lints: ^5.0.0
+flutter:
+  uses-material-design: true
+platforms:
+  android:
+  ios:
+  linux:
+  macos:
+  windows:
+topics:
+  - bluetooth
+  - ble
+  - rssi
+  - tracking
+  - radar
+  - location
