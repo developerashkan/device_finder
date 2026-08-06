@@ -44,9 +44,10 @@ packages:
   device_finder:
     dependency: "direct main"
     description:
-      path: "../device_finder"
-      relative: true
-    source: path
+      name: device_finder
+      sha256: "67dafcd73a9c96a017db6753071b9219c2e95f251902188d3e30a44cab69951f"
+      url: "https://pub.dev"
+    source: hosted
     version: "0.1.0"
   ffi:
     dependency: transitive

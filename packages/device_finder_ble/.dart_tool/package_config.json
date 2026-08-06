@@ -33,7 +33,7 @@
     },
     {
       "name": "device_finder",
-      "rootUri": "../../device_finder",
+      "rootUri": "file:///C:/Users/ASUS/AppData/Local/Pub/Cache/hosted/pub.dev/device_finder-0.1.0",
       "packageUri": "lib/",
       "languageVersion": "3.6"
     },

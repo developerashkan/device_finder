@@ -29,8 +29,7 @@ platforms:
   windows:
 topics:
   - bluetooth
-  - ble
   - rssi
   - tracking
   - radar
-  - location
+  - ble
