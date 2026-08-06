@@ -37,20 +37,24 @@ Inspired by [findphone](https://github.com/ben-z/findphone) and
 ```yaml
 dependencies:
   device_finder: ^0.1.0
-  # optional — BLE capture driver
-  device_finder_ble: ^0.1.0
 ```
 
 ```dart
 final tracker = DeviceTracker();
-final driver = BleDriver(); // from device_finder_ble
 
-await driver.ensurePermissions();
-driver.samples.listen(tracker.pushSample);
-await driver.startScan();
+// Feed the engine any RssiSample stream:
+tracker.pushSample(RssiSample(
+  deviceId: 'my-device-id',
+  source: RssiSource.advertising,
+  dbm: -65.0,
+  at: DateTime.now(),
+));
 
 // Bind the UI:
-RadarView(estimate: tracker.stateOf(id)?.estimate, fix: tracker.stateOf(id)?.fix);
+RadarView(
+  estimate: tracker.stateOf(id)?.estimate,
+  fix: tracker.stateOf(id)?.fix,
+);
 ```
 
 The engine is driver-agnostic: feed it any `RssiSample` stream.
