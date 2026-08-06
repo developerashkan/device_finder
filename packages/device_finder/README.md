@@ -1,6 +1,6 @@
 # device_finder
 
-![App Screenshot](https://raw.githubusercontent.com/developerashkan/device_finder/main/packages/device_finder/assets/Screenshot%202026-08-06%20164529.png)
+![App Screenshot](https://raw.githubusercontent.com/developerashkan/device_finder/main/packages/device_finder/assets/screenshot.jpg)
 
 Fully offline Bluetooth device tracking for Flutter. A pure-Dart, Kalman-filtered
 RSSI engine, trilateration with mirror-ambiguity resolution, offline calibration

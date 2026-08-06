@@ -1,3 +1,7 @@
+## 0.1.4
+
+* Updated app screenshot in README.
+
 ## 0.1.3
 
 * Fix README screenshot rendering on pub.dev.
