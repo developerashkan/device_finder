@@ -4,7 +4,7 @@
 
 Fully offline Bluetooth device tracking for Flutter. A pure-Dart, Kalman-filtered
 RSSI engine, trilateration with mirror-ambiguity resolution, offline calibration
-profiles, and a premium 60fps radar UI.
+profiles, and a premium radar UI.
 
 Inspired by [findphone](https://github.com/ben-z/findphone) and
 [superfind](https://github.com/p4r1ch4y/superfind).
