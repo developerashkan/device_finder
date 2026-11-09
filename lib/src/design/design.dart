@@ -20,7 +20,7 @@ abstract final class DfColors {
 
   static const textPrimary = Color(0xFFF8FAFC);
   static const textSecondary = Color(0xFF94A3B8);
-  static const textMuted = Color(0xFF64748B);
+  static const textMuted = Color(0xFF8494AA); // ≥ 4.5:1 on background
 
   static const grid = Color(0x1FFFFFFF);
   static const ring = Color(0x33FFFFFF);

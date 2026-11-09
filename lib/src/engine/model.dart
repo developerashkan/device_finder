@@ -147,7 +147,13 @@ class PositionFix {
     final l1 = (t + disc) / 2;
     final l2 = (t - disc) / 2;
     final theta = 0.5 * math.atan2(2 * covXY, covXX - covYY);
-    return (2.447 * math.sqrt(l1), 2.447 * math.sqrt(l2), theta * 180 / math.pi);
+    // Round-off can push the minor eigenvalue a hair below zero; clamp so
+    // the ellipse never becomes NaN.
+    return (
+      2.447 * math.sqrt(math.max(0.0, l1)),
+      2.447 * math.sqrt(math.max(0.0, l2)),
+      theta * 180 / math.pi,
+    );
   }
 }
 

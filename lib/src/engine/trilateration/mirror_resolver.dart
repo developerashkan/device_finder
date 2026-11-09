@@ -39,6 +39,7 @@ class MirrorResolver {
   (double x, double y)? _lastFix;
   (double x, double y)? _prevFix;
   DateTime? _lastTime;
+  double _vx = 0, _vy = 0; // smoothed velocity (m/s)
   final List<(double x, double y)> _history = [];
 
   int _locked = -1; // 0 = candidate a, 1 = candidate b
@@ -50,6 +51,8 @@ class MirrorResolver {
     _lastFix = null;
     _prevFix = null;
     _lastTime = null;
+    _vx = 0;
+    _vy = 0;
     _history.clear();
     _locked = -1;
     _consecutiveAltWins = 0;
@@ -167,11 +170,11 @@ class MirrorResolver {
     if (_lastTime == null || _history.length < 2) {
       return _lastFix;
     }
-    // Velocity from the last two fixes (capped).
-    final dt = at.difference(_lastTime!).inSeconds.toDouble().clamp(0.05, 5.0);
-    final vx = ((_lastFix!.$1 - _prevFix!.$1) / dt).clamp(-maxVelocity, maxVelocity);
-    final vy = ((_lastFix!.$2 - _prevFix!.$2) / dt).clamp(-maxVelocity, maxVelocity);
-    return (_lastFix!.$1 + vx * dt, _lastFix!.$2 + vy * dt);
+    // Extrapolate with the SMOOTHED velocity (see [_commit]); raw two-fix
+    // differences are dominated by RSSI jitter, not motion. The horizon is
+    // clamped so a pause can never fling the prediction.
+    final ahead = (at.difference(_lastTime!).inMicroseconds / 1e6).clamp(0.0, 1.0);
+    return (_lastFix!.$1 + _vx * ahead, _lastFix!.$2 + _vy * ahead);
   }
 
   (double x, double y)? _heading() {
@@ -196,6 +199,19 @@ class MirrorResolver {
   }
 
   void _commit((double x, double y) fix, DateTime at) {
+    // Velocity: per-step displacement over the real time gap (microsecond
+    // precision — whole seconds truncate to 0 at 10 Hz), clamped to a
+    // plausible walking speed, then exponentially smoothed.
+    if (_lastFix != null && _lastTime != null) {
+      final span = at.difference(_lastTime!).inMicroseconds / 1e6;
+      if (span > 1e-3) {
+        final ix = ((fix.$1 - _lastFix!.$1) / span).clamp(-maxVelocity, maxVelocity);
+        final iy = ((fix.$2 - _lastFix!.$2) / span).clamp(-maxVelocity, maxVelocity);
+        final alpha = span > 1.0 ? 1.0 : 0.15;
+        _vx += alpha * (ix - _vx);
+        _vy += alpha * (iy - _vy);
+      }
+    }
     _prevFix = _lastFix;
     _lastFix = fix;
     _lastTime = at;

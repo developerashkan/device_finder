@@ -67,8 +67,13 @@ class RssiKalmanFilter {
   DateTime? get lastUpdated => _lastT;
 
   /// Predict + update with a new measurement. Returns the filtered RSSI.
+  ///
+  /// A duplicate or out-of-order timestamp (dt ≤ 0) is ignored entirely, the
+  /// same contract as [updateWithDt].
   double update(double rssi, DateTime now) {
+    if (!rssi.isFinite) return _x1;
     final dt = _lastT == null ? 0.001 : now.difference(_lastT!).inMicroseconds / 1e6;
+    if (dt <= 0) return _x1;
     _lastT = now;
     _predict(dt);
     _correct(rssi);
@@ -80,7 +85,7 @@ class RssiKalmanFilter {
   /// dt ≤ 0 (duplicate/out-of-order sample) skips the ENTIRE update — a
   /// duplicate must not move the state at all.
   double updateWithDt(double rssi, double dt) {
-    if (dt <= 0) return _x1;
+    if (dt <= 0 || !rssi.isFinite) return _x1;
     _predict(dt);
     _correct(rssi);
     return _x1;

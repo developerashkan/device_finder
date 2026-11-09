@@ -38,6 +38,7 @@ class RadarScene extends ChangeNotifier {
   /// Beam angle in 1/100° integer units — integer phase tracking, no float
   /// drift.
   int phase = 0;
+  double _phase = 0; // exact accumulator (1/100° units)
 
   /// Brightness 0..1 per sector.
   late final Float32List brightness = Float32List(sectors);
@@ -52,8 +53,9 @@ class RadarScene extends ChangeNotifier {
   /// smoothly and every sector gets lit on its turn (integer `round()` per
   /// frame skips a sector every ~4 frames — a visible 33% duty-cycle hole).
   void advance(double dtSeconds) {
-    phase += (36000 / periodSeconds * dtSeconds).round();
-    if (phase >= 36000) phase -= 36000;
+    if (!dtSeconds.isFinite || dtSeconds <= 0) return;
+    _phase = (_phase + 36000 / periodSeconds * dtSeconds) % 36000;
+    phase = _phase.floor().clamp(0, 35999);
 
     final beam = phase / 100.0; // 0..360
     // Lit bucket = the one under the beam.
@@ -68,7 +70,6 @@ class RadarScene extends ChangeNotifier {
     }
     b[idx] = 1.0;
     _buckets[idx].intensity = 1.0;
-    _buckets[idx].lastHit = DateTime.now().millisecondsSinceEpoch / 1000.0;
     notifyListeners();
   }
 

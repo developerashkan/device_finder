@@ -4,6 +4,7 @@ import 'package:flutter/scheduler.dart';
 import '../../engine/tracker.dart';
 import '../../engine/model.dart';
 import '../listenable_adapter.dart';
+import '../radar3d/radar_target.dart';
 import 'radar_scene.dart';
 import 'radar_theme.dart';
 
@@ -136,7 +137,8 @@ class MultiRadarPainter extends CustomPainter {
       if (fix != null) {
         rawCenter = c + Offset(fix.x * pxPerMeter, -fix.y * pxPerMeter);
       } else {
-        final hash = s.info.id.hashCode.abs();
+        // Stable across runs and platforms (String.hashCode is neither).
+        final hash = RadarTarget(id: s.info.id, label: '', meters: 0).stableHash;
         // Spread around the top 120 degree arc (-60 to +60 from UP).
         final virtualBearingDeg = -60.0 + (hash % 120);
         final rad = (virtualBearingDeg - 90) * math.pi / 180;

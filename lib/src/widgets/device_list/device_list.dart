@@ -81,7 +81,7 @@ class _DeviceTile extends StatelessWidget {
     final displayName = primary.info.displayName ?? primary.info.name ?? primary.info.id;
 
     return Container(
-      margin: const EdgeInsets.all(DfSpace.md), // 12 px on all sides
+      margin: const EdgeInsets.only(bottom: DfSpace.sm),
       child: Material(
         color: selected ? DfColors.surfaceHigh : DfColors.surface,
         borderRadius: BorderRadius.circular(DfRadius.medium),
@@ -132,7 +132,7 @@ class _DeviceTile extends StatelessWidget {
                           ),
                           child: Text(
                             primary.info.kind ?? 'Device',
-                            style: const TextStyle(fontSize: 9, color: DfColors.accent, letterSpacing: 0.4),
+                            style: const TextStyle(fontSize: 11, color: DfColors.accent, letterSpacing: 0.3),
                           ),
                         ),
                         const SizedBox(width: DfSpace.sm),
@@ -143,7 +143,7 @@ class _DeviceTile extends StatelessWidget {
                               color: DfColors.danger.withValues(alpha: 0.15),
                               borderRadius: BorderRadius.circular(4),
                             ),
-                            child: const Text('STALE', style: TextStyle(fontSize: 9, color: DfColors.danger, letterSpacing: 0.5)),
+                            child: const Text('STALE', style: TextStyle(fontSize: 11, color: DfColors.danger, letterSpacing: 0.4)),
                           ),
                       ],
                     ),

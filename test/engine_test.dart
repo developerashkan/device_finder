@@ -421,8 +421,8 @@ void main() {
         final x = 5.0, y = 3.0 - i * 0.05;
         final d1 = math.sqrt(x * x + y * y);
         final d2 = math.sqrt((x - 10) * (x - 10) + y * y);
-        tracker.pushSample(RssiSample(deviceId: 'd', source: RssiSource.advertising, dbm: _simRssi(d1, rng), at: t0.add(Duration(milliseconds: i * 100))));
-        tracker.pushSample(RssiSample(deviceId: 'd', source: RssiSource.advertising, dbm: _simRssi(d2, rng), at: t0.add(Duration(milliseconds: i * 100 + 50))));
+        tracker.pushSample(RssiSample(deviceId: 'd', observerId: 'a1', source: RssiSource.advertising, dbm: _simRssi(d1, rng), at: t0.add(Duration(milliseconds: i * 100))));
+        tracker.pushSample(RssiSample(deviceId: 'd', observerId: 'a2', source: RssiSource.advertising, dbm: _simRssi(d2, rng), at: t0.add(Duration(milliseconds: i * 100 + 50))));
         tracker.tick(now: t0.add(Duration(milliseconds: i * 100 + 50)));
       }
       final s = tracker.stateOf('d');
