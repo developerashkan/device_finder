@@ -13,16 +13,16 @@ widget. No cloud, no accounts, no network.
 [![platforms](https://img.shields.io/badge/platforms-android%20%7C%20ios%20%7C%20macos%20%7C%20windows%20%7C%20linux%20%7C%20web-22d3ee)](#platform-setup)
 [![license: MIT](https://img.shields.io/badge/license-MIT-a78bfa.svg)](LICENSE)
 
-<img src="https://raw.githubusercontent.com/developerashkan/device_finder/main/assets/screenshots/radar.gif" width="360" alt="Animated 3D radar: a sweep with a light curtain passes over glowing device orbs on light pillars">
+<img src="https://raw.githubusercontent.com/developerashkan/device_finder/master/assets/screenshots/radar.gif" width="360" alt="Animated 3D radar: a sweep with a light curtain passes over glowing device orbs on light pillars">
 
 </div>
 
 <table>
   <tr>
-    <td><img src="https://raw.githubusercontent.com/developerashkan/device_finder/main/assets/screenshots/home_dark.png" alt="Home screen, dark: 3D radar with five devices and the nearby list"></td>
-    <td><img src="https://raw.githubusercontent.com/developerashkan/device_finder/main/assets/screenshots/locate_dark.png" alt="Locate screen, dark: AirPods at 3.3 m with proximity meter, stats and direction"></td>
-    <td><img src="https://raw.githubusercontent.com/developerashkan/device_finder/main/assets/screenshots/home_light.png" alt="Home screen, light theme"></td>
-    <td><img src="https://raw.githubusercontent.com/developerashkan/device_finder/main/assets/screenshots/locate_light.png" alt="Locate screen, light: a distance-only tag on its range ring, direction unknown"></td>
+    <td><img src="https://raw.githubusercontent.com/developerashkan/device_finder/master/assets/screenshots/home_dark.png" alt="Home screen, dark: 3D radar with five devices and the nearby list"></td>
+    <td><img src="https://raw.githubusercontent.com/developerashkan/device_finder/master/assets/screenshots/locate_dark.png" alt="Locate screen, dark: AirPods at 3.3 m with proximity meter, stats and direction"></td>
+    <td><img src="https://raw.githubusercontent.com/developerashkan/device_finder/master/assets/screenshots/home_light.png" alt="Home screen, light theme"></td>
+    <td><img src="https://raw.githubusercontent.com/developerashkan/device_finder/master/assets/screenshots/locate_light.png" alt="Locate screen, light: a distance-only tag on its range ring, direction unknown"></td>
   </tr>
 </table>
 
